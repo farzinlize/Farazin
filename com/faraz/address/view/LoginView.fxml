@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.faraz.address.view.LoginController">
+   <children>
+      <TabPane fx:id="tabs" prefHeight="400.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="signIn" text="Signin">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
+                     <children>
+                        <TextField fx:id="userLogin" layoutX="69.0" layoutY="116.0" prefHeight="30.0" prefWidth="260.0" promptText="Username ..." />
+                        <PasswordField fx:id="passLogin" layoutX="69.0" layoutY="165.0" prefHeight="30.0" prefWidth="260.0" promptText="Password ..." />
+                        <Button fx:id="login" layoutX="339.0" layoutY="212.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="30.0" prefWidth="88.0" text="Login" />
+                        <Label fx:id="loginLabel" layoutX="69.0" layoutY="48.0" prefHeight="21.0" prefWidth="366.0" text="Please login to your account" />
+                        <Hyperlink fx:id="forgot" layoutX="69.0" layoutY="213.0" text="Forgot Password?" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="signUp" text="Signup">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="500.0">
+                     <children>
+                        <TextField fx:id="userNew" layoutX="58.0" layoutY="42.0" prefHeight="30.0" prefWidth="260.0" promptText="Username ..." />
+                        <TextField fx:id="nameNew" layoutX="58.0" layoutY="82.0" prefHeight="30.0" prefWidth="260.0" promptText="Name ..." />
+                        <PasswordField fx:id="passNew" layoutX="58.0" layoutY="122.0" prefHeight="30.0" prefWidth="260.0" promptText="Password ..." />
+                        <PasswordField fx:id="passAgainNew" layoutX="58.0" layoutY="162.0" prefHeight="30.0" prefWidth="260.0" promptText="Repeat Password ..." />
+                        <Button fx:id="cheakUser" layoutX="328.0" layoutY="44.0" mnemonicParsing="false" onAction="#checkUsername" prefHeight="28.0" prefWidth="52.0" text="Check">
+                           <font>
+                              <Font size="12.0" />
+                           </font></Button>
+                        <Button fx:id="creatNew" layoutX="63.0" layoutY="294.0" mnemonicParsing="false" onAction="#newUser" prefHeight="31.0" prefWidth="125.0" text="Create" />
+                        <Label fx:id="newLabel" layoutX="63.0" layoutY="14.0" prefHeight="21.0" prefWidth="169.0" text="Enter your information :" />
+                        <Label fx:id="createResult" layoutX="297.0" layoutY="299.0" prefHeight="21.0" prefWidth="170.0" />
+                        <Label fx:id="userCheck" layoutX="392.0" layoutY="47.0" prefHeight="21.0" prefWidth="98.0" />
+                        <Label fx:id="passMatch" layoutX="346.0" layoutY="169.0" prefHeight="21.0" prefWidth="102.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
