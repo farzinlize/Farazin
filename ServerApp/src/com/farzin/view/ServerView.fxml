@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.farzin.view.ServerViewController">
+   <children>
+      <TextArea fx:id="console" layoutX="47.0" layoutY="41.0" prefHeight="447.0" prefWidth="924.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="startOff" layoutX="859.0" layoutY="550.0" mnemonicParsing="false" onAction="#change" prefHeight="76.0" prefWidth="170.0" text="ON/OFF" textFill="#170072" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="50.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
