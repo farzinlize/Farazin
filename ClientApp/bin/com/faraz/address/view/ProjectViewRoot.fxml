@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.faraz.address.view.ProjectViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileBar" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="newBar" mnemonicParsing="false" onAction="#makeNewFile" text="New File" />
+              <MenuItem fx:id="deleteBar" mnemonicParsing="false" text="Delete File" />
+              <MenuItem fx:id="closeBar" mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="helpBar" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="aboutBar" mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.6731898238747553" layoutX="320.0" layoutY="126.0" prefHeight="608.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane fx:id="projPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="versionsTable" layoutX="38.0" layoutY="383.0" prefHeight="157.0" prefWidth="617.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="383.0">
+                          <columns>
+                            <TableColumn fx:id="verName" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="verVer" prefWidth="75.0" text="Date" />
+                              <TableColumn fx:id="verDetails" prefWidth="75.0" text="Maker" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TextField fx:id="searchVer" layoutX="38.0" layoutY="340.0" promptText="Serach Last Versions ..." AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="340.0" />
+                        <Button fx:id="versionRef" layoutX="585.0" layoutY="340.0" mnemonicParsing="false" text="Refresh" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="340.0" />
+                        <TableView fx:id="filesTable" layoutX="32.0" layoutY="71.0" prefHeight="252.0" prefWidth="625.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="71.0">
+                          <columns>
+                            <TableColumn fx:id="fileName" prefWidth="108.388671875" text="Name" />
+                            <TableColumn fx:id="fileStatus" prefWidth="72.9140625" text="Status" />
+                              <TableColumn fx:id="fileDetails" prefWidth="342.0" text="Detail" />
+                              <TableColumn fx:id="fileLastVersion" prefWidth="101.0" text="Last Version" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <TextField fx:id="searchFile" layoutX="32.0" layoutY="27.0" promptText="Search File ..." AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="27.0" />
+                        <Button fx:id="fileRef" layoutX="585.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleRefreshFileTable" text="Refresh" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="27.0" />
+                        <Button layoutX="513.0" layoutY="552.0" mnemonicParsing="false" onAction="#downloadVersion" text="Download Version" AnchorPane.bottomAnchor="23.0" AnchorPane.rightAnchor="29.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="163.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5960264900662252" layoutX="43.0" layoutY="244.0" orientation="VERTICAL" prefHeight="606.0" prefWidth="330.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="319.0" prefWidth="328.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.1793478260869565" layoutX="28.0" layoutY="-37.0" orientation="VERTICAL" prefHeight="370.0" prefWidth="328.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <SplitMenuButton fx:id="profileBtn" layoutX="163.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="146.0" text="Profile" textAlignment="CENTER">
+                                                  <items>
+                                                    <MenuItem fx:id="profEditBtn" mnemonicParsing="false" text="Edit profile" />
+                                                      <MenuItem fx:id="editProject" mnemonicParsing="false" text="Edit project" />
+                                                      <MenuItem fx:id="profExit" mnemonicParsing="false" onAction="#exitProject" text="Exit project" />
+                                                    <MenuItem fx:id="ProfLogout" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                                                  </items>
+                                                </SplitMenuButton>
+                                                <Label layoutX="14.0" layoutY="19.0" prefHeight="21.0" prefWidth="90.0" text="Profile" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <GridPane layoutX="27.0" layoutY="14.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="93.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="207.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Name" />
+                                                      <Label text="Status" GridPane.rowIndex="2" />
+                                                      <Label text="Last Version" GridPane.rowIndex="3" />
+                                                      <Label text="Directory" GridPane.rowIndex="1" />
+                                                      <Label fx:id="nameLbl" text="Label" GridPane.columnIndex="1" />
+                                                      <Label fx:id="dirLbl" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <Label fx:id="statusLbl" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label fx:id="verLbl" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                   </children>
+                                                </GridPane>
+                                                <Button fx:id="lock" layoutX="242.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleLock" prefHeight="70.0" prefWidth="70.0" text="Lock" />
+                                                <Button fx:id="stealLock" layoutX="242.0" layoutY="239.0" mnemonicParsing="false" onAction="#handleStealLock" prefHeight="34.0" prefWidth="70.0" text="Steal Lock">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button fx:id="unlock" layoutX="167.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleUnlock" prefHeight="70.0" prefWidth="70.0" text="UnLock" />
+                                                <Button fx:id="update" layoutX="92.0" layoutY="158.0" mnemonicParsing="false" onAction="#updateFile" prefHeight="70.0" prefWidth="70.0" text="Update" />
+                                                <Button fx:id="history" layoutX="17.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleHistory" prefHeight="70.0" prefWidth="70.0" text="History" />
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="328.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Commit" />
+                                    <TextField fx:id="fileAddress" layoutX="14.0" layoutY="44.0" prefHeight="31.0" prefWidth="289.0" promptText="File Address" />
+                                    <TextField fx:id="commitName" layoutX="14.0" layoutY="82.0" prefHeight="31.0" prefWidth="217.0" promptText="New File Name ..." />
+                                    <Button fx:id="check" layoutX="242.0" layoutY="82.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="61.0" text="Check" />
+                                    <Button fx:id="commit" layoutX="231.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleCommit" prefHeight="65.0" prefWidth="75.0" text="Commit" />
+                                    <Button fx:id="chooseFile" layoutX="14.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleChooseForCommit" prefHeight="65.0" prefWidth="194.0" text="Choose a File ...">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="checkNameValue" layoutX="19.0" layoutY="120.0" prefHeight="21.0" prefWidth="290.0" text="Label" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

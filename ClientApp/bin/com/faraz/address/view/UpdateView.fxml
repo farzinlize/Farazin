@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.faraz.address.view.UpdateViewController">
+   <children>
+      <TextField fx:id="addressBar" layoutX="73.0" layoutY="21.0" prefHeight="31.0" prefWidth="232.0" promptText="C:\ ..." />
+      <Label layoutX="14.0" layoutY="26.0" prefHeight="21.0" prefWidth="55.0" text="Address" />
+      <Button layoutX="157.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleDownload" prefHeight="66.0" prefWidth="148.0" text="Download" />
+      <Button layoutX="322.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="66.0" prefWidth="64.0" text="Cancel" />
+      <Button layoutX="318.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBrowse" text="Browse" />
+   </children>
+</AnchorPane>
